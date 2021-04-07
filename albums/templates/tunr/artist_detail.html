@@ -1,0 +1,11 @@
+{% extends 'tunr/base.html' %}
+{% block content %}
+  <h2> {{ artist.name }} </h2>
+  <p><a href="{% url 'artist_edit' pk=artist.pk %}">EDIT</a></p>
+  <h3>Albums</h3>
+  <ul>
+    {% for album in artist.albums.all %}
+    <li>{{ album.title }} </li>
+    {% endfor %}
+  </ul>
+{% endblock %}
